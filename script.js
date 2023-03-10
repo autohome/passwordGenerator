@@ -35,8 +35,7 @@ var writePassword = function() {
     else if (charPrompt > 128 || charPrompt < 8) {
       window.alert ("ERROR: Please enter a numeric character between 8 and 128")
     writePassword();
-    } else if (!charPrompt) {
-      return;}   
+    } 
 
   // second Prompt
 
@@ -46,27 +45,22 @@ var writePassword = function() {
     pool.push(...lowerCaseArray);
     console.log(pool);
   }
-
     else (
       console.log(pool)
     )
     
     // Third prompt
-
     var upperCase = window.confirm ('Would you like to include UPPERCASE characters?')
 
     if (upperCase) { 
       pool.push(...upperCaseArray);
       console.log(pool);
     }
-  
       else (
         console.log(pool)
       )
-      
-    
+        
     // Fourth Prompt
-
     var char = window.confirm ('Would you like to include Special characters?')
 
     if (upperCase) { 
@@ -80,30 +74,16 @@ var writePassword = function() {
         
         console.log(charPrompt);
 
-    
-    // function password (length){
-    //   let result = ' ';
-    //   for (let i = 0; i < charPrompt; i++) {
-    //     result += pool.charAt(Math.floor(Math.random()*charPrompt))
-    //   }
-    //   return result;
-    // }
-          // var password = '';
-          //   for (var i = 0; i < charPrompt;i++) {
-          //     var randomPassword = Math.floor(Math.random()*charPrompt);
-          //     password += [pool]randomPassword
-          //   }
-
-      function randomPassword () {
-        for (var i = 0; i , charPrompt; i++) {
-          password = pool[Math.floor(Math.random() * charPrompt)]
+        var password = '';
+          for (var i = 0; i < charPrompt; i++) {
+            console.log(pool)
+            password += pool[Math.floor(Math.random() * pool.length)]
         }
-        console.log (password)
-      }
+        console.log (password);
+      
 
-        
 
-        // var password = generatePassword();
+  // var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 
