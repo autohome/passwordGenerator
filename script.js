@@ -16,10 +16,10 @@ const specialChar = [...string]
 
 
 
-console.log (upperCaseArray)
-console.log (lowerCaseArray)
-console.log (numbers)
-console.log (specialChar)
+// console.log (upperCaseArray)
+// console.log (lowerCaseArray)
+// console.log (numbers)
+// console.log (specialChar)
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -29,30 +29,87 @@ var writePassword = function() {
   // first prompt
   var charPrompt = window.prompt ("Choose a length of 8 to 128 characters");
     // error 
-    if (charPrompt > 128 || charPrompt < 8) {
+  if (!charPrompt) {
+    return;
+  }
+    else if (charPrompt > 128 || charPrompt < 8) {
+      window.alert ("ERROR: Please enter a numeric character between 8 and 128")
     writePassword();
-    }
+    } else if (!charPrompt) {
+      return;}   
 
   // second Prompt
 
-  var lowerCase = window.confirm ('Would you like lowercase characters?')
-  // if yes
-  // if (lowerCase) { 
-  //   var combined = 
+  var lowerCase = window.confirm ('Would you like to include lowercase characters?')
 
-  // }
+  if (lowerCase) { 
+    pool.push(...lowerCaseArray);
+    console.log(pool);
+  }
 
-  var password = generatePassword();
+    else (
+      console.log(pool)
+    )
+    
+    // Third prompt
+
+    var upperCase = window.confirm ('Would you like to include UPPERCASE characters?')
+
+    if (upperCase) { 
+      pool.push(...upperCaseArray);
+      console.log(pool);
+    }
+  
+      else (
+        console.log(pool)
+      )
+      
+    
+    // Fourth Prompt
+
+    var char = window.confirm ('Would you like to include Special characters?')
+
+    if (upperCase) { 
+        pool.push(...specialChar);
+        console.log(pool);
+      }
+    
+        else (
+          console.log(pool)
+        )
+        
+        console.log(charPrompt);
+
+    
+    // function password (length){
+    //   let result = ' ';
+    //   for (let i = 0; i < charPrompt; i++) {
+    //     result += pool.charAt(Math.floor(Math.random()*charPrompt))
+    //   }
+    //   return result;
+    // }
+          // var password = '';
+          //   for (var i = 0; i < charPrompt;i++) {
+          //     var randomPassword = Math.floor(Math.random()*charPrompt);
+          //     password += [pool]randomPassword
+          //   }
+
+      function randomPassword () {
+        for (var i = 0; i , charPrompt; i++) {
+          password = pool[Math.floor(Math.random() * charPrompt)]
+        }
+        console.log (password)
+      }
+
+        
+
+        // var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
-
-
-
-
-
   passwordText.value = password;
 
-}
+
+    }
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
