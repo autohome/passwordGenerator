@@ -20,7 +20,7 @@ N/A
 
 ## Usage
 
-This password generator can be found at [Link](https://autohome.github.io/passwordGenerator/){:target="_blank" rel="noopener"}
+This password generator can be found at [Link](https://autohome.github.io/passwordGenerator/)
 
 In order to use password generator, please follow these steps:
 
