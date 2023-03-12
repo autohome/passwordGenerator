@@ -67,7 +67,7 @@ function specialChar () {
     if (x) { 
       pool.push(...specialCharArray);
       generatePassword();
-    } else if (!x && pool === null){
+    } else if (!x || pool === null){
       window.alert ('ERROR: Please choose at least one set of characters.');
     } else (
       generatePassword()
