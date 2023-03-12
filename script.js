@@ -70,7 +70,7 @@ function specialChar () {
     } else if (!x && pool === null){
       window.alert ('ERROR: Please choose at least one set of characters.');
     } else (
-      generatePassword();
+      generatePassword()
     )
 }
 
