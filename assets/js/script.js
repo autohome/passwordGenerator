@@ -12,7 +12,7 @@ const upperCaseArray = alpha.map((x) => String.fromCharCode(x));
 const lowerCaseArray = upperCaseArray.map(upperCaseArray => upperCaseArray.toLowerCase())
 
 // numeric array
-const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+const numbersArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 // special char array
 const string = '!#$%&()*+,-./:;<=>?@[\]^_{|}~'
@@ -55,15 +55,24 @@ function upperCase() {
   var x = window.confirm ('Would you like to include UPPERCASE characters?');
     if (x) {
       pool.push(...upperCaseArray);
+      numbers();
+    } else 
+      numbers();
+}
+
+// fourth prompt
+function numbers() { 
+  var x = window.confirm ('Would you like to include numeric characters?');
+    if (x) {
+      pool.push(...numbersArray);
       specialChar();
     } else 
       specialChar();
-}
+  }
 
-  // Fourth Prompt
-
+// Final Prompt
 function specialChar () {
-  var x = window.confirm ('Would you like to include Special characters?')  ;
+  var x = window.confirm ('Would you like to include special characters?')  ;
     if (x) { 
       pool.push(...specialCharArray);
       generatePassword();
@@ -84,11 +93,34 @@ function generatePassword() {
     displayPassword(password)    
 }
 
-  function displayPassword(password) {
-    var passwordText = document.querySelector("#password");
-    passwordText.value = password;
+function displayPassword(password) {
+  var passwordText = document.querySelector("#password");
+   passwordText.value = password;
+   showCopy();
 }
 
+// adds copy text button
+function showCopy () {
+  document.getElementById('copy').style.visibility='visible';
+}
+
+// copys text
+function copy() {
+  var copyText = document.getElementById("password");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+  var tooltip = document.getElementById("copy");
+  tooltip.innerHTML = "Copied 😀 ";
+}
+
+function outFunc() {
+  var tooltip = document.getElementById("copy");
+  tooltip.innerHTML = "Copy Text";
+}
 
 // // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+

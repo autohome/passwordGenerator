@@ -52,6 +52,7 @@ header {
 
 .card-body {
   min-height: 100px;
+  text-align: center;
 }
 
 .card-footer {
@@ -97,6 +98,7 @@ button[disabled] {
   float: right;
 }
 
+
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -118,6 +120,13 @@ button[disabled] {
   overflow: hidden;
 }
 
+/* copy text button */
+#copy {
+  text-align: center;
+  visibility: hidden;
+  margin-top: -15px;
+  
+}
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;
